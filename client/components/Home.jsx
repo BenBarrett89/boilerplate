@@ -1,9 +1,10 @@
 import React from 'react'
+
 export default React.createClass({
-  render () {
+  render: function () {
     return (
       <div>
-        <h1>Home Page</h1>
+        <h2>Home Page</h2>
       </div>
     )
   }
