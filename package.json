@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenBarrett89/boilerplate.git"
+  },
+  "author": "Ben Barrett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenBarrett89/boilerplate/issues"
+  },
+  "homepage": "https://github.com/BenBarrett89/boilerplate#readme"
+}
