@@ -29,6 +29,7 @@ Boilerplate intending to use the following technologies (subject to change!)
 * [Standard](http://standardjs.com/)
 * [Nodemon](https://github.com/remy/nodemon)
 * [CrossEnv](https://www.npmjs.com/package/cross-env)
+* [Rimraf](https://github.com/isaacs/rimraf)
 * [Redux Dev Tools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 
 ### Build

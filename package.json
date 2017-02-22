@@ -4,7 +4,10 @@
   "description": "Boilerplate",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run delete-build && npm run copy-client",
+    "copy-client": "cp -r client/ build/",
+    "delete-build": "rimraf build",
+    "start": "npm run build && cross-env PORT=8080 node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/BenBarrett89/boilerplate/issues"
   },
-  "homepage": "https://github.com/BenBarrett89/boilerplate#readme"
+  "homepage": "https://github.com/BenBarrett89/boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "cross-env": "^3.1.4",
+    "rimraf": "^2.6.0"
+  }
 }
