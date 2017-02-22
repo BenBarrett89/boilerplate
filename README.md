@@ -1,7 +1,7 @@
 # boilerplate
 Boilerplate intending to use the following technologies (subject to change!)
 
-## Technologies
+## Technologies/Frameworks/Libraries
 
 ### Client
 * [React](https://facebook.github.io/react/)
