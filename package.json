@@ -9,7 +9,9 @@
     "copy-client": "babel client/ --copy-files --out-dir build",
     "delete-build": "rimraf build",
     "start": "npm run check-js && npm run test && npm run build && cross-env PORT=8080 node server/server.js",
-    "test": "ava --verbose"
+    "test": "npm run test-client && npm run test-server",
+    "test-client": "ava --verbose client/**/*-spec.js",
+    "test-server": "ava --verbose server/**/*-spec.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,11 @@
   },
   "homepage": "https://github.com/BenBarrett89/boilerplate#readme",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
+    "mongodb": "^2.2.24",
+    "mongoose": "^4.8.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
@@ -50,10 +55,6 @@
     "webpack": "^2.2.1"
   },
   "ava": {
-    "files": [
-      "client/**/*-spec.js",
-      "server/**/*-spec.js"
-    ],
     "source": [
       "**/*.{js,jsx}"
     ],

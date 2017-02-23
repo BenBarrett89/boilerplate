@@ -18,7 +18,7 @@ Boilerplate intending to use the following technologies (subject to change!)
 * [Express](http://expressjs.com/)
  * [Body Parser](https://github.com/expressjs/body-parser)
  * [~~Express Winston~~](https://github.com/bithavoc/express-winston)
-* [~~Mongoose~~](http://mongoosejs.com/)
+* [Mongoose](http://mongoosejs.com/)
 * [~~Winston~~](https://github.com/winstonjs/winston)
 
 ### Test, Lint and Develop

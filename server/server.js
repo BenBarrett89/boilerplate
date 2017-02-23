@@ -1,13 +1,18 @@
 const http = require('http')
 const express = require('express')
 const path = require('path')
+const { productionDb, testDb } = require('./database/connections')()
 
 const API = require('./api/api')
 
 // express
 const app = express()
 
-API.init(app)
+// mongoose
+const db = productionDb()
+const testDbCleanup = testDb()
+
+API.init(app, db)
 
 app.use(express.static(path.resolve(__dirname, '../build/')))
 
@@ -30,6 +35,8 @@ const startServer = (portToUse) => {
 
 const stopServer = () => {
   server.close()
+  db.close()
+  testDbCleanup.close()
   process.exit()
 }
 

@@ -1,14 +1,23 @@
 const express = require('express')
 
-const domainRoutes = () => {
+const domainRoutes = domainRepository => {
   const domain = express()
 
-  // add repo to logic init once it's/they've been passed in
-  const domainLogic = require('../domains/domain/domain-logic').init()
+  const domainLogic = require('../domains/domain/domain-logic').init(domainRepository)
   const domainService = require('../domains/domain/domain-service').init(domainLogic)
 
   domain.get('/', (request, response) => {
-    domainService.getDomain(request)
+    domainService.getDomains(request)
+    .then(data => {
+      response.send(data)
+    })
+    .catch(error => {
+      response.status(500).send(error)
+    })
+  })
+
+  domain.post('/', (request, response) => {
+    domainService.createDomain(request)
     .then(data => {
       response.send(data)
     })

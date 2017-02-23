@@ -1,15 +1,20 @@
 const { json, urlencoded } = require('body-parser')
 
 const APIPaths = require('../config/api-paths')
+const DomainSchema = require('../schemas/DomainSchema')
 
-const API = (app) => {
+const API = (app, db) => {
   app.use(json())
   app.use(urlencoded({ extended: true }))
 
-  // register models against DB connection (pass into model files?)
-  // create repositories to wrap model methods and pass into route inits for logics to use
+  // models
+  const Domain = db.model('Domain', DomainSchema)
 
-  const domainRoutes = require('./domain-routes').init()
+  // repositories
+  const domainRepository = require('../domains/domain/domain-repository').init(Domain)
+
+  // routes
+  const domainRoutes = require('./domain-routes').init(domainRepository)
   app.use(APIPaths.DOMAIN_PATH, domainRoutes)
 }
 

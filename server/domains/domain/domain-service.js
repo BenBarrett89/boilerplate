@@ -1,13 +1,25 @@
 const domainService = domainLogic => {
-  const getDomain = (request) => {
+  const createDomain = request => {
     return new Promise((resolve, reject) => {
       // do validation/request mapping here
-      resolve(domainLogic.getDomain(request))
+      const domain = {
+        count: request.body.count,
+        time: new Date()
+      }
+      resolve(domainLogic.createDomain(domain))
+    })
+  }
+
+  const getDomains = request => {
+    return new Promise((resolve, reject) => {
+      // do validation/request mapping here
+      resolve(domainLogic.getDomains())
     })
   }
 
   return {
-    getDomain
+    createDomain,
+    getDomains
   }
 }
 
