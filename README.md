@@ -22,9 +22,9 @@ Boilerplate intending to use the following technologies (subject to change!)
 * [~~Winston~~](https://github.com/winstonjs/winston)
 
 ### Test, Lint and Develop
-* [~~AVA~~](https://github.com/avajs/ava)
-* [~~Enzyme~~](https://github.com/airbnb/enzyme)
-* [~~Sinon~~](http://sinonjs.org/)
+* [AVA](https://github.com/avajs/ava)
+* [Enzyme](https://github.com/airbnb/enzyme)
+* [Sinon](http://sinonjs.org/)
 * [~~Mockgoose~~](https://github.com/mccormicka/Mockgoose)
 * [~~Standard~~](http://standardjs.com/)
 * [~~Nodemon~~](https://github.com/remy/nodemon)
