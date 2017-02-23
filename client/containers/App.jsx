@@ -1,5 +1,7 @@
 import React from 'react'
 
+import NavBar from '../components/NavBar.jsx'
+
 export default React.createClass({
   propTypes: {
     children: React.PropTypes.element
@@ -9,6 +11,7 @@ export default React.createClass({
     return (
       <div>
         <h1>Application</h1>
+        <NavBar />
         { this.props.children }
       </div>
     )
