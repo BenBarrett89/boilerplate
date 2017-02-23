@@ -2,8 +2,12 @@ const http = require('http')
 const express = require('express')
 const path = require('path')
 
+const API = require('./api/api')
+
 // express
 const app = express()
+
+API.init(app)
 
 app.use(express.static(path.resolve(__dirname, '../build/')))
 
