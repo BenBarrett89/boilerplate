@@ -7,7 +7,7 @@
     "build": "npm run delete-build && npm run copy-client && webpack",
     "copy-client": "babel client/ --copy-files --out-dir build",
     "delete-build": "rimraf build",
-    "start": "npm run build && cross-env PORT=8080 node server/server.js",
+    "start": "npm run test && npm run build && cross-env PORT=8080 node server/server.js",
     "test": "ava --verbose"
   },
   "repository": {
