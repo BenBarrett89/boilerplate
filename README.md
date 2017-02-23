@@ -23,8 +23,8 @@ Boilerplate intending to use the following technologies (subject to change!)
 
 ### Test, Lint and Develop
 * [AVA](https://github.com/avajs/ava)
-* [~~Enzyme~~](https://github.com/airbnb/enzyme)
-* [~~Sinon~~](http://sinonjs.org/)
+* [Enzyme](https://github.com/airbnb/enzyme)
+* [Sinon](http://sinonjs.org/)
 * [~~Mockgoose~~](https://github.com/mccormicka/Mockgoose)
 * [~~Standard~~](http://standardjs.com/)
 * [~~Nodemon~~](https://github.com/remy/nodemon)
