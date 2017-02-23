@@ -5,9 +5,10 @@
   "main": "server/server.js",
   "scripts": {
     "build": "npm run delete-build && npm run copy-client && webpack",
+    "check-js": "standard",
     "copy-client": "babel client/ --copy-files --out-dir build",
     "delete-build": "rimraf build",
-    "start": "npm run test && npm run build && cross-env PORT=8080 node server/server.js",
+    "start": "npm run check-js && npm run test && npm run build && cross-env PORT=8080 node server/server.js",
     "test": "ava --verbose"
   },
   "repository": {
@@ -45,6 +46,7 @@
     "redux-devtools-extension": "^2.13.0",
     "rimraf": "^2.6.0",
     "sinon": "^1.17.7",
+    "standard": "^8.6.0",
     "webpack": "^2.2.1"
   },
   "ava": {
@@ -60,5 +62,12 @@
       "ignore-styles"
     ],
     "babel": "inherit"
+  },
+  "standard": {
+    "ignore": [
+      "/test/",
+      "/node_modules/",
+      "/build/"
+    ]
   }
 }
