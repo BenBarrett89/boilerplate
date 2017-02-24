@@ -5,21 +5,15 @@ mongoose.Promise = require('bluebird')
 const mockgoose = require('mockgoose')
 
 const DomainSchema = require('../DomainSchema')
+let Domain
 
-test.before(assert => {
-  mockgoose(mongoose).then(() => {
-    mongoose.connect('mongodb://localhost:27017/boilerplate-test', (error) => {
-      if (error) assert.fail(`Mongoose connection failed with error: ${error}`)
-    })
-  })
-})
-
-test.afterEach(assert => {
-  mongoose.connection.models = {}
+test.before(async assert => {
+  await mockgoose(mongoose)
+  await mongoose.connect('mongodb://localhost:27017/boilerplate-test')
+  Domain = mongoose.model('Domain', DomainSchema)
 })
 
 test(`Can create valid Domain objects`, async assert => {
-  const Domain = mongoose.model('Domain', DomainSchema)
   const testDomainObject = {
     count: 5,
     time: new Date(2017, 2, 23, 9)
@@ -30,7 +24,6 @@ test(`Can create valid Domain objects`, async assert => {
 })
 
 test(`Will not create invalid Domain objects (missing time)`, async assert => {
-  const Domain = mongoose.model('Domain', DomainSchema)
   const testDomainObject = {
     count: 5
   }
@@ -39,7 +32,6 @@ test(`Will not create invalid Domain objects (missing time)`, async assert => {
 })
 
 test(`Will not create invalid Domain objects (missing count)`, async assert => {
-  const Domain = mongoose.model('Domain', DomainSchema)
   const testDomainObject = {
     time: new Date(2017, 2, 23, 9)
   }
