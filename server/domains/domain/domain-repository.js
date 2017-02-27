@@ -11,6 +11,17 @@ const domainRepository = Domain => {
     })
   }
 
+  const deleteDomain = id => {
+    return new Promise((resolve, reject) => {
+      Domain.remove({_id: id}, error => {
+        if (error) {
+          return reject(error)
+        }
+        resolve('Domain deleted')
+      })
+    })
+  }
+
   const getDomains = () => {
     return new Promise((resolve, reject) => {
       Domain.find({}, (error, domains) => {
@@ -24,6 +35,7 @@ const domainRepository = Domain => {
 
   return {
     createDomain,
+    deleteDomain,
     getDomains
   }
 }

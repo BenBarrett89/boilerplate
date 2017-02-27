@@ -6,6 +6,13 @@ const domainLogic = domainRepository => {
     })
   }
 
+  const deleteDomain = id => {
+    return new Promise((resolve, reject) => {
+      // do any repository calls and business logic here
+      resolve(domainRepository.deleteDomain(id))
+    })
+  }
+
   const getDomains = () => {
     return new Promise((resolve, reject) => {
       // do any repository calls and business logic here
@@ -15,6 +22,7 @@ const domainLogic = domainRepository => {
 
   return {
     createDomain,
+    deleteDomain,
     getDomains
   }
 }
