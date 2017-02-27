@@ -1,7 +1,16 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { decrement, getDomains, increment, setDomains } from '../actions/domain-actions'
-import { getDomainsService, postDomainService } from '../services/domain-service'
-import { typeGetDomains, typePostDomain, typeRandom } from '../constants/action-constants'
+import { deleteDomainService, getDomainsService, postDomainService } from '../services/domain-service'
+import { typeDeleteDomain, typeGetDomains, typePostDomain, typeRandom } from '../constants/action-constants'
+
+function* deleteDomainSaga (action) {
+  try {
+    yield call(deleteDomainService, action.id)
+    yield put(getDomains())
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 function* getDomainsSaga () {
   try {
@@ -30,6 +39,10 @@ function* randomSaga () {
   }
 }
 
+function* watchDeleteDomain () {
+  yield takeEvery(typeDeleteDomain, deleteDomainSaga)
+}
+
 function* watchGetDomains () {
   yield takeEvery(typeGetDomains, getDomainsSaga)
 }
@@ -44,6 +57,7 @@ function* watchRandom () {
 
 export default function* root () {
   yield [
+    watchDeleteDomain(),
     watchGetDomains(),
     watchPostDomain(),
     watchRandom()

@@ -1,9 +1,16 @@
-import { typeDecrement, typeGetDomains, typeIncrement,
+import { typeDecrement, typeDeleteDomain, typeGetDomains, typeIncrement,
   typePostDomain, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
 
 export function decrement () {
   return {
     type: typeDecrement
+  }
+}
+
+export function deleteDomain (id) {
+  return {
+    type: typeDeleteDomain,
+    id: id
   }
 }
 

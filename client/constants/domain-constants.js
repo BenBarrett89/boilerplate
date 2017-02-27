@@ -4,6 +4,8 @@ const counterText = 'Counter: '
 const decrementButtonId = 'decrement'
 const decrementButtonText = 'Decrement'
 const deleteColumnHeading = 'Delete'
+const deleteDomainButtonId = 'delete'
+const deleteDomainButtonText = 'Delete'
 const incrementButtonId = 'increment'
 const incrementButtonText = 'Increment'
 const postDomainButtonId = 'postDomain'
@@ -23,6 +25,8 @@ module.exports = {
   decrementButtonId,
   decrementButtonText,
   deleteColumnHeading,
+  deleteDomainButtonId,
+  deleteDomainButtonText,
   incrementButtonId,
   incrementButtonText,
   postDomainButtonId,

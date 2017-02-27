@@ -14,6 +14,7 @@ export default React.createClass({
     ),
     value: React.PropTypes.number,
     decrement: React.PropTypes.func,
+    deleteDomain: React.PropTypes.func,
     getDomains: React.PropTypes.func,
     increment: React.PropTypes.func,
     postDomain: React.PropTypes.func,
@@ -57,7 +58,13 @@ export default React.createClass({
                 <tr key={i}>
                   <td>{domain.count}</td>
                   <td>{domain.time}</td>
-                  <td />
+                  <td>
+                    <button
+                      id={`${DomainConstants.deleteDomainButtonId}-${domain._id}`}
+                      onClick={() => this.props.deleteDomain(domain._id)}>
+                      {DomainConstants.deleteDomainButtonText}
+                    </button>
+                  </td>
                 </tr>
               )
             })}
