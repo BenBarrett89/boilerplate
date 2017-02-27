@@ -10,7 +10,7 @@ Boilerplate intending to use the following technologies (subject to change!)
  * [~~React Helmet~~](https://github.com/nfl/react-helmet)
 * [Redux](http://redux.js.org/)
  * [React Redux](https://github.com/reactjs/react-redux)
- * [~~Redux Saga~~](https://github.com/redux-saga/redux-saga)
+ * [Redux Saga](https://github.com/redux-saga/redux-saga)
 * [~~Axios~~](https://github.com/mzabriskie/axios)
 
 ### Server
