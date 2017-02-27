@@ -1,4 +1,4 @@
-import { typeIncrement, typeDecrement } from '../constants/action-constants'
+import { typeIncrement, typeDecrement, typeReset } from '../constants/action-constants'
 
 const initialState = {
   value: 0
@@ -13,6 +13,8 @@ export default function (state = initialState, action) {
       return increment(state)
     case typeDecrement:
       return decrement(state)
+    case typeReset:
+      return initialState
     default:
       return state
   }

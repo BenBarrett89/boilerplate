@@ -1,4 +1,4 @@
-import { typeIncrement, typeDecrement } from '../constants/action-constants'
+import { typeIncrement, typeDecrement, typeRandom, typeReset } from '../constants/action-constants'
 
 export function increment () {
   return {
@@ -9,5 +9,17 @@ export function increment () {
 export function decrement () {
   return {
     type: typeDecrement
+  }
+}
+
+export function random () {
+  return {
+    type: typeRandom
+  }
+}
+
+export function reset () {
+  return {
+    type: typeReset
   }
 }
