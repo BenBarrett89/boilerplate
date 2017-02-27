@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { decrement, getDomains, increment, random, reset } from '../actions/domain-actions'
+import { decrement, getDomains, increment, postDomain, random, reset } from '../actions/domain-actions'
 import Domain from '../components/Domain.jsx'
 
 export const DomainPage = React.createClass({
@@ -31,6 +31,9 @@ function mapDispatchToProps (dispatch) {
     },
     increment: () => {
       dispatch(increment())
+    },
+    postDomain: (count) => {
+      dispatch(postDomain(count))
     },
     random: () => {
       dispatch(random())

@@ -1,11 +1,14 @@
 import { typeDecrement, typeIncrement, typeReset, typeSetDomains } from '../constants/action-constants'
 
+const INITIAL_VALUE = 0
+
 const initialState = {
-  value: 0
+  value: INITIAL_VALUE
 }
 
 const decrement = state => Object.assign({}, state, {value: state.value - 1})
 const increment = state => Object.assign({}, state, {value: state.value + 1})
+const reset = state => Object.assign({}, state, {value: INITIAL_VALUE})
 const setDomains = (state, domains) => Object.assign({}, state, {domains: domains})
 
 export default function (state = initialState, action) {
@@ -15,7 +18,7 @@ export default function (state = initialState, action) {
     case typeIncrement:
       return increment(state)
     case typeReset:
-      return initialState
+      return reset(state)
     case typeSetDomains:
       return setDomains(state, action.domains)
     default:

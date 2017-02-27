@@ -1,7 +1,7 @@
 import axiosInstance from './axios-instance'
 import { DOMAIN_PATH } from '../config/api-config'
 
-const getDomains = () => {
+const getDomainsService = () => {
   return new Promise((resolve, reject) => {
     axiosInstance.get(DOMAIN_PATH)
       .then(response => {
@@ -14,7 +14,7 @@ const getDomains = () => {
   })
 }
 
-const postDomain = (domain) => {
+const postDomainService = (domain) => {
   return new Promise((resolve, reject) => {
     axiosInstance.post(DOMAIN_PATH, domain)
       .then(response => {
@@ -28,6 +28,6 @@ const postDomain = (domain) => {
 }
 
 module.exports = {
-  getDomains,
-  postDomain
+  getDomainsService,
+  postDomainService
 }
