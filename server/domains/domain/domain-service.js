@@ -10,6 +10,14 @@ const domainService = domainLogic => {
     })
   }
 
+  const deleteDomain = request => {
+    return new Promise((resolve, reject) => {
+      // do validation/request mapping here
+      const id = request.params.id
+      resolve(domainLogic.deleteDomain(id))
+    })
+  }
+
   const getDomains = request => {
     return new Promise((resolve, reject) => {
       // do validation/request mapping here
@@ -19,6 +27,7 @@ const domainService = domainLogic => {
 
   return {
     createDomain,
+    deleteDomain,
     getDomains
   }
 }

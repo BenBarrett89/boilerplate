@@ -11,7 +11,7 @@ Boilerplate intending to use the following technologies (subject to change!)
 * [Redux](http://redux.js.org/)
  * [React Redux](https://github.com/reactjs/react-redux)
  * [Redux Saga](https://github.com/redux-saga/redux-saga)
-* [~~Axios~~](https://github.com/mzabriskie/axios)
+* [Axios](https://github.com/mzabriskie/axios)
 
 ### Server
 * [Node.js](https://nodejs.org/en/)

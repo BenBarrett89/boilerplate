@@ -1,4 +1,24 @@
-import { typeIncrement, typeDecrement, typeRandom, typeReset } from '../constants/action-constants'
+import { typeDecrement, typeDeleteDomain, typeGetDomains, typeIncrement,
+  typePostDomain, typeRandom, typeReset, typeSetDomains } from '../constants/action-constants'
+
+export function decrement () {
+  return {
+    type: typeDecrement
+  }
+}
+
+export function deleteDomain (id) {
+  return {
+    type: typeDeleteDomain,
+    id: id
+  }
+}
+
+export function getDomains () {
+  return {
+    type: typeGetDomains
+  }
+}
 
 export function increment () {
   return {
@@ -6,9 +26,10 @@ export function increment () {
   }
 }
 
-export function decrement () {
+export function postDomain (count) {
   return {
-    type: typeDecrement
+    type: typePostDomain,
+    count: count
   }
 }
 
@@ -21,5 +42,12 @@ export function random () {
 export function reset () {
   return {
     type: typeReset
+  }
+}
+
+export function setDomains (domains) {
+  return {
+    type: typeSetDomains,
+    domains: domains
   }
 }
