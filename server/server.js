@@ -2,6 +2,8 @@ const http = require('http')
 const express = require('express')
 const path = require('path')
 const { productionDb, testDb } = require('./database/connections')()
+const { expresslogger, logger } = require('./common/logger')
+const loggerConstants = require('./constants/logger-constants')
 
 const API = require('./api/api')
 
@@ -11,6 +13,9 @@ const app = express()
 // mongoose
 const db = productionDb()
 const testDbCleanup = testDb()
+
+app.use(expresslogger)
+logger.log(loggerConstants.LOG_LEVEL_VERBOSE, 'Winston logger started')
 
 API.init(app, db)
 
@@ -28,8 +33,8 @@ const startServer = (portToUse) => {
   const environment = app.get('env')
   return server.listen(portToUse, () => {
     const { port } = server.address()
-    console.log(`Environment ${environment}`)
-    console.log(`Server listening on port ${port}`)
+    logger.log(loggerConstants.LOG_LEVEL_INFO, `Environment ${environment}`)
+    logger.log(loggerConstants.LOG_LEVEL_VERBOSE, `Server listening on port ${port}`)
   })
 }
 
@@ -42,19 +47,19 @@ const stopServer = () => {
 
 // process
 process.on('SIGINT', () => {
-  console.log('SIGINT')
+  logger.log(loggerConstants.LOG_LEVEL_DEBUG, 'SIGINT')
   stopServer()
 })
 process.on('exit', () => {
-  console.log('Server stopped')
+  logger.log(loggerConstants.LOG_LEVEL_VERBOSE, 'Server stopped')
   stopServer()
 })
 process.on('uncaughtException', () => {
-  console.log('Uncaught Exception')
+  logger.log(loggerConstants.LOG_LEVEL_ERROR, 'Uncaught Exception')
   stopServer()
 })
 process.on('SIGURS2', () => {
-  console.log('Uncaught Exception')
+  logger.log(loggerConstants.LOG_LEVEL_ERROR, 'Uncaught Exception')
   stopServer()
 })
 

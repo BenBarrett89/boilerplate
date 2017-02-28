@@ -17,9 +17,9 @@ Boilerplate intending to use the following technologies (subject to change!)
 * [Node.js](https://nodejs.org/en/)
 * [Express](http://expressjs.com/)
  * [Body Parser](https://github.com/expressjs/body-parser)
- * [~~Express Winston~~](https://github.com/bithavoc/express-winston)
+ * [Express Winston](https://github.com/bithavoc/express-winston)
 * [Mongoose](http://mongoosejs.com/)
-* [~~Winston~~](https://github.com/winstonjs/winston)
+* [Winston](https://github.com/winstonjs/winston)
 
 ### Test, Lint and Develop
 * [AVA](https://github.com/avajs/ava)
