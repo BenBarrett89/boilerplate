@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import headConfig from '../config/head-config'
 import NavBar from '../components/NavBar.jsx'
 
 export default React.createClass({
@@ -12,8 +13,9 @@ export default React.createClass({
     return (
       <div>
         <Helmet
-          defaultTitle='Application'
-          titleTemplate='%s | Application'
+          defaultTitle={headConfig.DEFAULT_TITLE}
+          titleTemplate={headConfig.TITLE_TEMPLATE}
+          meta={headConfig.HEAD_META}
           />
         <h1>Application</h1>
         <NavBar />
