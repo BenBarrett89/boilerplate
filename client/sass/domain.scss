@@ -1,0 +1,28 @@
+@import '_colours';
+
+div.current-counter {
+  float: left;
+  width: 25%;
+}
+
+table.domain-table {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+
+button.button {
+  background-color: white;
+  border-radius: 15%;
+  display: block;
+  float: left;
+}
+button.primary {
+  background-color: $primary;
+}
+button.secondary {
+  background-color: $secondary;
+}
+button.delete {
+  width: 100%;
+}

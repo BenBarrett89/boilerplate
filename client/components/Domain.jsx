@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 
 import DomainConstants from '../constants/domain-constants'
 
+require('../sass/domain.scss')
+
 export default React.createClass({
   propTypes: {
     domains: React.PropTypes.arrayOf(
@@ -37,14 +39,16 @@ export default React.createClass({
     return (
       <div>
         <h3>{DomainConstants.titleText}</h3>
-        <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
-        <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span></p>
-        <button id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</button>
-        <button id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</button>
-        <button id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</button>
-        <button id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</button>
-        <button id={DomainConstants.postDomainButtonId} onClick={() => this.props.postDomain(this.props.value)}>{DomainConstants.postDomainButtonText}</button>
-        <table>
+        <div className='current-counter'>
+          <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
+          <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span></p>
+          <button className='button' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</button>
+          <button className='button' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</button>
+          <button className='button primary' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</button>
+          <button className='button' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</button>
+          <button className='button secondary' id={DomainConstants.postDomainButtonId} onClick={() => this.props.postDomain(this.props.value)}>{DomainConstants.postDomainButtonText}</button>
+        </div>
+        <table className='domain-table'>
           <thead>
             <tr>
               <th>{DomainConstants.countColumnHeading}</th>
@@ -60,6 +64,7 @@ export default React.createClass({
                   <td>{domain.time}</td>
                   <td>
                     <button
+                      className='button primary delete'
                       id={`${DomainConstants.deleteDomainButtonId}-${domain._id}`}
                       onClick={() => this.props.deleteDomain(domain._id)}>
                       {DomainConstants.deleteDomainButtonText}
