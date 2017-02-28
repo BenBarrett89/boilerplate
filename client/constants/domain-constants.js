@@ -15,7 +15,7 @@ const randomButtonText = 'Random'
 const resetButtonId = 'reset'
 const resetButtonText = 'Reset'
 const timeColumnHeading = 'Time Recorded'
-const titleTest = 'Domain Page'
+const titleText = 'Domain Page'
 const valueSpanId = 'value'
 
 module.exports = {
@@ -36,6 +36,6 @@ module.exports = {
   resetButtonId,
   resetButtonText,
   timeColumnHeading,
-  titleTest,
+  titleText,
   valueSpanId
 }
