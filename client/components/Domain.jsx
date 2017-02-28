@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 import DomainConstants from '../constants/domain-constants'
 
-require('../sass/domain.scss')
+require('../sass/components/domain.scss')
 
 export default React.createClass({
   propTypes: {
@@ -37,10 +37,9 @@ export default React.createClass({
   },
   render: function () {
     return (
-      <div>
-        <h3>{DomainConstants.titleText}</h3>
+      <div className='domain-div'>
+        <h2>{DomainConstants.titleText}</h2>
         <div className='current-counter'>
-          <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
           <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span></p>
           <button className='button' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</button>
           <button className='button' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</button>
@@ -75,6 +74,8 @@ export default React.createClass({
             })}
           </tbody>
         </table>
+        <br />
+        <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
       </div>
     )
   }

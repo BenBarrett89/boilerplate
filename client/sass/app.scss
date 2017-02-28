@@ -1,4 +1,4 @@
-@import '_colours';
+@import './themes/_colours';
 
 html {
   background-color: $secondary;
@@ -8,4 +8,9 @@ html {
 body {
   color: black;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+h1.title {
+  color: white;
+  text-shadow: 2px 2px 5px $secondary;
 }

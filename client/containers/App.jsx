@@ -17,7 +17,7 @@ export default React.createClass({
           titleTemplate={headConfig.TITLE_TEMPLATE}
           meta={headConfig.HEAD_META}
           />
-        <h1>Application</h1>
+        <h1 className='title'>Application</h1>
         <NavBar />
         { this.props.children }
       </div>

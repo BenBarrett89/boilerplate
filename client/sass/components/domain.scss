@@ -1,4 +1,7 @@
-@import '_colours';
+@import '../themes/_colours';
+@import '../mixins/page';
+
+div.domain-div {@include page();}
 
 div.current-counter {
   float: left;
@@ -25,4 +28,8 @@ button.secondary {
 }
 button.delete {
   width: 100%;
+}
+
+br {
+  clear: left;
 }
