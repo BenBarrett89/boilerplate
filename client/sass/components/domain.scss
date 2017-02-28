@@ -20,13 +20,16 @@ button.button {
   display: block;
   float: left;
 }
-button.primary {
+button.primary-button {
+  @extend .button;
   background-color: $primary;
 }
-button.secondary {
+button.secondary-button {
+  @extend .button;
   background-color: $secondary;
 }
-button.delete {
+button.delete-button {
+  @extend .primary-button;
   width: 100%;
 }
 
