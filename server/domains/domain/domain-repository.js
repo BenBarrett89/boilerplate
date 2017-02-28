@@ -7,7 +7,7 @@ const domainRepository = Domain => {
       const domain = new Domain(domainObject)
       domain.save(error => {
         if (error) {
-          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.createDomain error: \n %${error}`)
+          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.createDomain error: \n ${error}`)
           return reject(error)
         }
         resolve('Domain created')
@@ -19,7 +19,7 @@ const domainRepository = Domain => {
     return new Promise((resolve, reject) => {
       Domain.remove({_id: id}, error => {
         if (error) {
-          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.deleteDomain error: \n %${error}`)
+          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.deleteDomain error: \n ${error}`)
           return reject(error)
         }
         resolve('Domain deleted')
@@ -31,7 +31,7 @@ const domainRepository = Domain => {
     return new Promise((resolve, reject) => {
       Domain.find({}, (error, domains) => {
         if (error) {
-          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.getDomains error: \n %${error}`)
+          logger.log(loggerConstants.LOG_LEVEL_ERROR, `domainRepository.getDomains error: \n ${error}`)
           return reject(error)
         }
         resolve(domains)
