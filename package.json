@@ -13,7 +13,7 @@
     "test-client": "ava --verbose client/**/*-spec.js",
     "test-server": "ava --verbose server/**/*-spec.js",
     "watch-client": "npm run delete-build && npm run copy-client && webpack --watch",
-    "watch-server": "cross-env PORT=8080 nodemon server/server.js"
+    "watch-server": "cross-env nodemon server/server.js"
   },
   "repository": {
     "type": "git",
