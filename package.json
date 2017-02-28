@@ -11,7 +11,9 @@
     "start": "npm run check-js && npm run test && npm run build && cross-env PORT=8080 node server/server.js",
     "test": "npm run test-client && npm run test-server",
     "test-client": "ava --verbose client/**/*-spec.js",
-    "test-server": "ava --verbose server/**/*-spec.js"
+    "test-server": "ava --verbose server/**/*-spec.js",
+    "watch-client": "npm run delete-build && npm run copy-client && webpack --watch",
+    "watch-server": "cross-env PORT=8080 nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -57,6 +59,7 @@
     "jsdom": "^9.11.0",
     "mockgoose": "^6.0.8",
     "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
     "redux-devtools-extension": "^2.13.0",
     "rimraf": "^2.6.0",
