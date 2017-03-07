@@ -1,7 +1,7 @@
 import { takeEvery } from 'redux-saga/effects'
 import { typeDeleteDomain, typeGetDomains, typePostDomain, typeRandom } from '../constants/action-constants'
 
-const domainWatches = (domainSagas) => {
+const domainWatches = domainSagas => {
   function* watchDeleteDomain () {
     yield takeEvery(typeDeleteDomain, domainSagas.deleteDomainSaga)
   }
