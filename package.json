@@ -8,6 +8,7 @@
     "check-js": "standard",
     "copy-client": "babel client/ --copy-files --out-dir build",
     "delete-build": "rimraf build",
+    "quickstart": "cross-env PORT=8080 node server/server.js",
     "start": "npm run check-js && npm run test && npm run build && cross-env PORT=8080 node server/server.js",
     "test": "npm run test-client && npm run test-server",
     "test-client": "ava --verbose client/**/*-spec.js",
