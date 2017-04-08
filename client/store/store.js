@@ -3,6 +3,7 @@ import { routerMiddleware } from 'react-router-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware, { END } from 'redux-saga'
+import { getProducts } from '../actions/product-actions'
 
 import RootReducer from './reducers'
 
@@ -23,6 +24,7 @@ export function configureStore (initialState = {}) {
 
   runSagas(sagaMiddleware)
 
+  store.dispatch(getProducts())
   store.close = () => store.dispatch(END)
 
   return store
