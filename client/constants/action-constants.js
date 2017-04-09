@@ -7,6 +7,8 @@ const typePostDomain = 'DOMAIN_POST_DOMAIN'
 const typeRandom = 'DOMAIN_RANDOM'
 const typeReset = 'DOMAIN_RESET'
 const typeSetDomains = 'DOMAIN_SET_DOMAINS'
+const typeGetProducts = 'PRODUCT_GET_PRODUCTS'
+const typeSetProducts = 'PRODUCT_SET_PRODUCTS'
 
 module.exports = {
   typeDecrement,
@@ -16,5 +18,7 @@ module.exports = {
   typePostDomain,
   typeRandom,
   typeReset,
-  typeSetDomains
+  typeSetDomains,
+  typeGetProducts,
+  typeSetProducts
 }

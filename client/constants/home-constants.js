@@ -1,5 +1,5 @@
-const homeTitleId = 'homeTitle'
-const homeTitleText = 'Home Page'
+const homeTitleId = 'Caskit'
+const homeTitleText = 'Welcome to Caskit'
 
 module.exports = {
   homeTitleId,

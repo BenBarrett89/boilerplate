@@ -1,6 +1,6 @@
 const PRODUCTION_URI_HOST = 'localhost'
 const PRODUCTION_URI_PORT = '27017'
-const PRODUCTION_DB = 'boilerplate'
+const PRODUCTION_DB = 'caskit'
 
 const TEST_URI_HOST = 'localhost'
 const TEST_URI_PORT = '27017'
