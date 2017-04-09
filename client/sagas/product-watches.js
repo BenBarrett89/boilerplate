@@ -1,5 +1,9 @@
 import { takeEvery } from 'redux-saga/effects'
-import { typeDeleteProduct, typeGetProducts, typePostProduct } from '../constants/action-constants'
+import {
+  typeDeleteProduct,
+  typeGetProducts,
+  typePostProduct
+} from '../constants/action-constants'
 
 const productWatches = productSagas => {
   function* watchDeleteProduct () {
@@ -7,6 +11,8 @@ const productWatches = productSagas => {
   }
 
   function* watchGetProducts () {
+    // listens to action broadcasts and calls relevant saga
+    console.log('watchGetProducts')
     yield takeEvery(typeGetProducts, productSagas.getProductsSaga)
   }
 
@@ -16,9 +22,9 @@ const productWatches = productSagas => {
 
   function* root () {
     yield [
-      watchDeleteProduct(),
-      watchGetProducts(),
-      watchPostProduct()
+      // watchDeleteProduct(),
+      watchGetProducts()
+      // watchPostProduct()
     ]
   }
 

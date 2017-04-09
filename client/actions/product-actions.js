@@ -4,6 +4,7 @@ import {
 } from '../constants/action-constants'
 
 export function getProducts () {
+  console.log('getProducts action')
   return {
     type: typeGetProducts
   }

@@ -15,8 +15,10 @@ const productSagas = productService => {
   }
 
   function* getProductsSaga () {
+    console.log('getProductsSaga')
     try {
       const products = yield call(productService.getProductsService)
+      console.log('yo', products)
       yield put(setProducts(products))
     } catch (error) {
       console.log(error)

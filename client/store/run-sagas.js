@@ -7,8 +7,12 @@ export default function (sagaMiddleware) {
   const domainSagas = require('../sagas/domain-sagas').init(domainService, randomService)
   const domainWatches = require('../sagas/domain-watches').init(domainSagas)
 
+  // product
   const productService = require('../services/product-service').init(axiosInstance)
   const productSagas = require('../sagas/product-sagas').init(productService)
   const productWatches = require('../sagas/product-watches').init(productSagas)
-  sagaMiddleware.run(domainWatches, productWatches)
+
+  // run sagas
+  sagaMiddleware.run(domainWatches)
+  sagaMiddleware.run(productWatches)
 }
