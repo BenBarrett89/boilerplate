@@ -1,8 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
+import { NavItem } from 'react-bootstrap'
 
 export default React.createClass({
   render: function () {
-    return <Link {...this.props} />
+    return (
+      <NavItem>
+        <Link {...this.props} />
+      </NavItem>
+    )
   }
 })

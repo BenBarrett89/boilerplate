@@ -1,15 +1,16 @@
 import React from 'react'
 import NavLink from './NavLink.jsx'
+import { Nav } from 'react-bootstrap'
 
 require('../sass/components/nav-bar.scss')
 
 export default React.createClass({
   render: function () {
     return (
-      <div className='nav-bar'>
+      <Nav bsStyle='tabs' className='nav-bar'>
         <NavLink className='nav-link' to='/'>Home</NavLink>
         <NavLink className='nav-link' to='/domain'>Domain</NavLink>
-      </div>
+      </Nav>
     )
   }
 })
