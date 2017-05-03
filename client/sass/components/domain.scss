@@ -4,8 +4,8 @@
 div.domain-div {@include page();}
 
 div.current-counter {
-  float: left;
-  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table.domain-table {
@@ -14,24 +14,24 @@ table.domain-table {
   width: 50%;
 }
 
-button.button {
-  background-color: white;
-  border-radius: 15%;
-  display: block;
-  float: left;
-}
-button.primary-button {
-  @extend .button;
-  background-color: $primary;
-}
-button.secondary-button {
-  @extend .button;
-  background-color: $secondary;
-}
-button.delete-button {
-  @extend .primary-button;
-  width: 100%;
-}
+// button.button {
+//   background-color: white;
+//   border-radius: 15%;
+//   display: block;
+//   float: left;
+// }
+// button.primary-button {
+//   @extend .button;
+//   background-color: $primary;
+// }
+// button.secondary-button {
+//   @extend .button;
+//   background-color: $secondary;
+// }
+// button.delete-button {
+//   @extend .primary-button;
+//   width: 100%;
+// }
 
 br {
   clear: left;
