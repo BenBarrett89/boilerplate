@@ -4,8 +4,6 @@ import { Button, Col, Grid, Panel, Row, Table } from 'react-bootstrap'
 
 import DomainConstants from '../constants/domain-constants'
 
-require('../sass/components/domain.scss')
-
 export default React.createClass({
   propTypes: {
     domains: React.PropTypes.arrayOf(
