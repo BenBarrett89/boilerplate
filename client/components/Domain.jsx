@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { Button, Col, Grid, Panel, Row, Table } from 'react-bootstrap'
 
 import DomainConstants from '../constants/domain-constants'
 
@@ -37,46 +38,52 @@ export default React.createClass({
   },
   render: function () {
     return (
-      <div className='domain-div'>
-        <h2>{DomainConstants.titleText}</h2>
-        <div className='current-counter'>
-          <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span></p>
-          <button className='button' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</button>
-          <button className='button' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</button>
-          <button className='primary-button' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</button>
-          <button className='button' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</button>
-          <button className='secondary-button' id={DomainConstants.postDomainButtonId} onClick={() => this.props.postDomain(this.props.value)}>{DomainConstants.postDomainButtonText}</button>
-        </div>
-        <table className='domain-table'>
-          <thead>
-            <tr>
-              <th>{DomainConstants.countColumnHeading}</th>
-              <th>{DomainConstants.timeColumnHeading}</th>
-              <th>{DomainConstants.deleteColumnHeading}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.getDomainsArray().map((domain, i) => {
-              return (
-                <tr key={i}>
-                  <td>{domain.count}</td>
-                  <td>{domain.time}</td>
-                  <td>
-                    <button
-                      className='delete-button'
-                      id={`${DomainConstants.deleteDomainButtonId}-${domain._id}`}
-                      onClick={() => this.props.deleteDomain(domain._id)}>
-                      {DomainConstants.deleteDomainButtonText}
-                    </button>
-                  </td>
+      <Grid>
+        <Row className='show-grid'>
+          <h2>{DomainConstants.titleText}</h2>
+          <Col xs={12} md={2} className='current-counter'>
+            <Panel>
+              <p>{DomainConstants.counterText}<span id={DomainConstants.valueSpanId}>{this.props.value}</span></p>
+              <Button bsStyle='default' id={DomainConstants.incrementButtonId} onClick={() => this.props.increment()}>{DomainConstants.incrementButtonText}</Button>
+              <Button bsStyle='default' id={DomainConstants.decrementButtonId} onClick={() => this.props.decrement()}>{DomainConstants.decrementButtonText}</Button>
+              <Button bsStyle='warning' id={DomainConstants.resetButtonId} onClick={() => this.props.reset()}>{DomainConstants.resetButtonText}</Button>
+              <Button bsStyle='info' id={DomainConstants.randomButtonId} onClick={() => this.props.random()}>{DomainConstants.randomButtonText}</Button>
+              <Button bsStyle='primary' id={DomainConstants.postDomainButtonId} onClick={() => this.props.postDomain(this.props.value)}>{DomainConstants.postDomainButtonText}</Button>
+            </Panel>
+          </Col>
+          <Col xs={12} md={10}>
+            <Table className='domain-table'>
+              <thead>
+                <tr>
+                  <th>{DomainConstants.countColumnHeading}</th>
+                  <th>{DomainConstants.timeColumnHeading}</th>
+                  <th>{DomainConstants.deleteColumnHeading}</th>
                 </tr>
-              )
-            })}
-          </tbody>
-        </table>
-        <br />
-        <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
-      </div>
+              </thead>
+              <tbody>
+                {this.getDomainsArray().map((domain, i) => {
+                  return (
+                    <tr key={i}>
+                      <td>{domain.count}</td>
+                      <td>{domain.time}</td>
+                      <td>
+                        <Button
+                          bsStyle='danger'
+                          id={`${DomainConstants.deleteDomainButtonId}-${domain._id}`}
+                          onClick={() => this.props.deleteDomain(domain._id)}>
+                          {DomainConstants.deleteDomainButtonText}
+                        </Button>
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </Table>
+            <br />
+            <Link to='/'>{DomainConstants.backToHomeLinkText}</Link>
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 })
